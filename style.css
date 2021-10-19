@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@500&display=swap');
+
+body{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    background-color: rgba(0, 0, 0, 0.78);
+    color: white;
+}
+
+.tous{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.name{
+    font-size: 400%;
+}
+
+.un{
+    font-size:x-large;
+}
+
+
+button{
+    color: rgba(99, 95, 94, 0.78);
+    height: 100%;
+}
+
+.recherche{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.recherche>input{
+    padding: 5px 10px;
+    border-radius: 30px 0 0 30px;
+    outline: none;
+    width: 30%;
+    font-size: 125%;
+}
+
+.recherche>button{
+    font-size: 1.2em;
+    padding: 5px 10px;
+    border-radius: 0 30px 30px 0;
+}
+
+.resultat{
+    display:flex;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+#resultat{
+    height: 65vh;
+    overflow: auto;
+}
+
+.cocktail{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2em;
+}
+
+.cocktail-tmb{
+    padding: 15px;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+}
+
+.titre{
+    font-size: 2em;
+}
+
+.conteneur{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#recette{
+    display:grid;
+    grid-template-areas: "img nom"
+    "img ing"
+    "img recette";
+}
+
+#recette > .cocktail-img {
+    grid-area: img;
+    width: 40vw;
+}
+#recette > .cocktailTitle {
+    grid-area: nom;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+}
+#recette > .cocktail-ings {
+    grid-area: ing;
+    display:flex;
+    justify-content: center;
+}
+#recette > .cocktail-ings>ul>li.cocktail{
+display:list-item;
+}
+
+#recette > .cocktail-recette {
+    grid-area: recette;
+    font-size: 2em;
+    padding-left: 30px;
+    padding-right: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.action{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.action>a{
+    border: 1px;
+    padding: 10px 25px;
+    font-size: 2em;
+    color: #444;
+    background-color: #A1A1A1;
+    border-radius: 10px;
+}
+
+.block{
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.onglet{
+    display: none;
+
+}
+
+.onglet>a{
+    cursor:pointer;
+    padding: 5px 10px;
+    border: 1px;
+    font-size: 2em;
+    color: #444;
+    background-color: #A1A1A1;
+}

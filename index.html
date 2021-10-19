@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+                <title>CocktailSearch</title>
+                <script src="script.js"></script>
+                <LINK rel="stylesheet" type="text/css" href="style.css">
+        </head>
+
+        <body>
+        <div class="tous">
+            <div class="block">
+            <div class="name">
+                <p>CocktailSearch</p>
+            </div>
+            <div class ="recherche">
+                <input id="recherche" placeholder="Recherche the cocktail do you want make." onkeypress="recherche(event)">
+                <button onclick="recherche('bonjour')">Recherche</button>
+            </div>
+        </div>
+            <div class="onglet" id="onglet">
+                <a onclick="recherche (event)">All</a>
+                <a onclick="rechercheParNom(event)">By name</a>
+                <a onclick="rechercheParIng1(event)">By ingredient</a>
+                <a onclick="rechercheParCate(event)">By Category</a>
+            </div>
+            <div id="resultat">
+                
+            </div>
+           
+        </div>
+
+        </body>
+    </html>
