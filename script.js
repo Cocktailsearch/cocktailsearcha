@@ -129,7 +129,8 @@ adding=(divrecette, cocktail, num)=>{
     if(cocktail['strIngredient'+num]){
         let ing=document.createElement("li")
         ing.className="cocktail"
-        ing.textContent=cocktail['strIngredient'+num]+" "+cocktail['strMeasure'+num]
+        let measure = cocktail['strMeasure'+num] || "";
         divrecette.appendChild(ing)
+        ing.textContent=cocktail['strIngredient'+num]+" "+measure
     }
 }
