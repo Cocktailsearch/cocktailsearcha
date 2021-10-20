@@ -8,8 +8,8 @@
 
         <body>
         <div class="tous">
-            <div class="list">
-                <a onclick="list(event)">All list</a>
+            <div class="listall">
+                <a onclick="listAll()">All list</a>
             </div>
             <div class="block">
             <div class="name">
@@ -19,12 +19,12 @@
                 <input id="recherche" placeholder="Recherche the cocktail do you want make." onkeypress="recherche(event)">
                 <button onclick="recherche('bonjour')">Recherche</button>
             </div>
-        </div>
             <div class="onglet" id="onglet">
                 <a onclick="recherche (event)">All</a>
                 <a onclick="rechercheParNom(event)">By Name</a>
                 <a onclick="rechercheParIng1(event)">By Ingredient</a>
                 <a onclick="rechercheParCate(event)">In Category</a>
+            </div>
             </div>
             <div id="resultat">
                 

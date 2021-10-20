@@ -144,3 +144,15 @@ adding=(divrecette, cocktail, num)=>{
         ing.textContent=cocktail['strIngredient'+num]+" "+measure
     }
 }
+
+listAll=()=>{
+    let divresultat =document.getElementById('resultat')
+        divresultat.textContent=""
+    for(let l=65; l<=90 ;l++){
+        let letter=String.fromCharCode(l)
+        console.log(l, "=>", letter)
+        let url="https://www.thecocktaildb.com/api/json/v1/1/search.php?f="+letter;
+        afficheResultat(divresultat, url, letter.toUpperCase())
+    }
+
+}
