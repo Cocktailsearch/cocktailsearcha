@@ -174,4 +174,5 @@ display:list-item;
     top: 20px;
     right: 20px;
     cursor:pointer;
+    text-decoration: underline;
 }
