@@ -146,6 +146,7 @@ adding=(divrecette, cocktail, num)=>{
 }
 
 listAll=()=>{
+    list();
     let divresultat =document.getElementById('resultat')
         divresultat.textContent=""
     for(let l=65; l<=90 ;l++){
@@ -158,10 +159,18 @@ listAll=()=>{
 }
 
 list=()=>{
-    let divresultat=document.createElement('button')
+    let divresultat =document.getElementById('resultat')
+    let divLetter =document.getElementById('letter')
     for(let p=65; p<=90; p++){
         let letter=String.fromCharCode(p)
-        console.log(p, "=>", letter)
-        afficheResultat(button.toUpperCase)
+        let buttonLetter=document.createElement('button');
+        buttonLetter.textContent=letter;
+        buttonLetter.className="noselect"
+        let url="https://www.thecocktaildb.com/api/json/v1/1/search.php?f="+letter;
+        buttonLetter.onclick=()=>{
+            divresultat.textContent=""
+            afficheResultat(divresultat, url, letter.toUpperCase());
+        }
+        divLetter.appendChild(buttonLetter)
     }
 }
