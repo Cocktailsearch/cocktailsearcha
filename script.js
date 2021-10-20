@@ -156,3 +156,11 @@ listAll=()=>{
     }
 
 }
+
+list=()=>{
+    let divresultat=document.createElement('button')
+    for(let p=65; l<=90; l++){
+        let letter=String.fromCharCode(p)
+        console.log(p, "=>", letter)
+    }
+}
