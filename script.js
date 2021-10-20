@@ -65,30 +65,30 @@ rechercheParNom= (event) => {
     }
     }
 
-    rechercheParIng1= (event) => { 
+rechercheParIng1= (event) => { 
         if(event.keyCode && event.keyCode===13 || !event.keyCode) {
-            let el=document.getElementById('recherche');
-            let divresultat =document.getElementById('resultat')
-            divresultat.textContent=""
-            afficheResultat(divresultat, "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="+el.value, "cocktail whose name includes " + el.value)
-        }
-        }
+        let el=document.getElementById('recherche');
+        let divresultat =document.getElementById('resultat')
+        divresultat.textContent=""
+        afficheResultat(divresultat, "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="+el.value, "cocktail which includes " + el.value)
+    }
+    }
 
-        rechercheParCate= (event) => { 
-            if(event.keyCode && event.keyCode===13 || !event.keyCode) {
-                let el=document.getElementById('recherche');
-                let divresultat =document.getElementById('resultat')
-                divresultat.textContent=""
-                afficheResultat(divresultat, "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c="+el.value, "cocktail whose name includes " + el.value)
-            }
-            }
+rechercheParCate= (event) => { 
+     if(event.keyCode && event.keyCode===13 || !event.keyCode) {
+        let el=document.getElementById('recherche');
+        let divresultat =document.getElementById('resultat')
+        divresultat.textContent=""
+        afficheResultat(divresultat, "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c="+el.value, "cocktail in the category " + el.value)
+    }
+    }
         
-        rechercheParAlcoholic= (event) => { 
+rechercheParAlcoholic= (event) => { 
     if(event.keyCode && event.keyCode===13 || !event.keyCode) {
         let el=document.getElementById('recherche');
         let divresultat =document.getElementById('resultat')
         divresultat.textContent=""
-        afficheResultat(divresultat, "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a="+el.value, "cocktail whose name includes " + el.value)
+        afficheResultat(divresultat, "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a="+el.value, "Filter Alcoholic " + el.value)
     }
     }
 
