@@ -159,8 +159,9 @@ listAll=()=>{
 
 list=()=>{
     let divresultat=document.createElement('button')
-    for(let p=65; l<=90; l++){
+    for(let p=65; p<=90; p++){
         let letter=String.fromCharCode(p)
         console.log(p, "=>", letter)
+        afficheResultat(button.toUpperCase)
     }
 }

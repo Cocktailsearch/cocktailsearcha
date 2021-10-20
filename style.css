@@ -173,16 +173,6 @@ display:list-item;
     color: #444;
     background-color: #A1A1A1;
     border-radius: 10px;
-}
-
-.list{
-    border: 1px;
-    padding: 10px 25px;
-    font-size: 2em;
-    color: #444;
-    background-color: #A1A1A1;
-    border-radius: 10px;
-    position: fixed;
-    cursor:pointer;
+    cursor: pointer;
     text-decoration: underline;
 }
