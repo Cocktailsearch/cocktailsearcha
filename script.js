@@ -26,6 +26,7 @@ creerListCocktail=(parent, cocktail, titre)=>{
     divTitre.className="titre"
         
     let {drinks} = cocktail;
+    if(drinks){
     drinks.forEach(element => {
         let divcocktail=document.createElement("div")
         divcocktail.className="cocktail"
@@ -42,6 +43,7 @@ creerListCocktail=(parent, cocktail, titre)=>{
         list.appendChild(divcocktail)
         
     });
+}
     conteneur.appendChild(divTitre)
     conteneur.appendChild(list)
     parent.appendChild(conteneur)
@@ -153,6 +155,7 @@ adding=(divrecette, cocktail, num)=>{
 }
 
 listAll=()=>{
+    document.getElementById("onglet").style.display="none";
     list();
     let divresultat =document.getElementById('resultat')
         divresultat.textContent="";

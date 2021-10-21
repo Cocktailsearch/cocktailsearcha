@@ -5,12 +5,13 @@
                 <script src="script.js"></script>
                 <LINK rel="stylesheet" type="text/css" href="style.css">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
         </head>
 
         <body>
         <div class="tous">
             <div class="listall">
-                <a onclick="listAll()">All list</a>
+                <a onclick="listAll()"><i class="fas fa-list"></i> All list</a>
             </div>
             <div class="block">
             <div class="name">
@@ -18,13 +19,13 @@
             </div>
             <div class ="recherche">
                 <input id="recherche" placeholder="Recherche the cocktail do you want make." onkeypress="recherche(event)">
-                <button onclick="recherche('bonjour')" data-label="Recherche">Recherche</button>
+                <button onclick="recherche('bonjour')" data-label="Recherche"><i class="fas fa-search"></i> Recherche</button>
             </div>
             <div class="onglet" id="onglet">
-                <a onclick="recherche (event)">All</a>
-                <a onclick="rechercheParNom(event)">By Name</a>
-                <a onclick="rechercheParIng1(event)">By Ingredient</a>
-                <a onclick="rechercheParCate(event)">In Category</a>
+                <a onclick="recherche (event)"><i class="fas fa-list"></i> All</a>
+                <a onclick="rechercheParNom(event)"><i class="fas fa-beer"></i> By Name</a>
+                <a onclick="rechercheParIng1(event)"><i class="far fa-lemon"></i> By Ingredient</a>
+                <a onclick="rechercheParCate(event)"><i class="fas fa-cocktail"></i> In Category</a>
             </div>
             <div class="letter" id="letter">
 
