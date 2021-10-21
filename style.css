@@ -238,7 +238,11 @@ button:focus {
     font-size: 2em;
 }
 
-@media only screen and (max-width: 768px) {
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) {
+
     .listall{
         position: fixed;
         top: 20px;
@@ -246,7 +250,7 @@ button:focus {
         border: 1px;
         padding: 10px 25px;
         font-size: 2em;
-        color: #444;
+        color:red;
         background-color: #A1A1A1;
         border-radius: 10px;
         cursor: pointer;
