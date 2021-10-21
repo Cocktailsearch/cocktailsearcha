@@ -167,6 +167,7 @@ listAll=()=>{
         let cocktailPromise = fetch(url)
         .then((res)=>res.json())
         promises.push(cocktailPromise);
+        document.getElementById("recherche").value=""
     }
 
     Promise.all(promises)
@@ -192,6 +193,7 @@ list=()=>{
         let url="https://www.thecocktaildb.com/api/json/v1/1/search.php?f="+letter;
         buttonLetter.onclick=()=>{
             divresultat.textContent=""
+            document.getElementById("recherche").value=""
             afficheResultat(divresultat, url, letter.toUpperCase());
         }
         divLetter.appendChild(buttonLetter)
