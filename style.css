@@ -238,10 +238,8 @@ button:focus {
     font-size: 2em;
 }
 
-@media screen 
-  and (device-width: 360px) 
-  and (device-height: 640px) 
-  and (-webkit-device-pixel-ratio: 2) {
+@media  only screen 
+  and (max-device-width: 600px) {
 
     .listall{
         position: fixed;
@@ -249,11 +247,21 @@ button:focus {
         right: 20px;
         border: 1px;
         padding: 10px 25px;
-        font-size: 2em;
+        font-size: 1em;
         color:red;
         background-color: #A1A1A1;
         border-radius: 10px;
         cursor: pointer;
         text-decoration: underline;
+    }
+
+    .recherche>input{
+width: 100%;
+border-radius: 30px;
+    }
+
+    .recherche>button{
+        display:none;
+        
     }
 }
