@@ -8,39 +8,43 @@ afficheResultat= (parent, url, titre)=>{
     fetch(url)
         .then((res)=>res.json())
         .then((cocktail)=>{
-            let conteneur=document.createElement("div")
-            let divTitre=document.createElement("div")
-            let list=document.createElement("div")
-            list.className="resultat"
-            divTitre.textContent=titre
-            conteneur.className="conteneur"
-            divTitre.className="titre"
-                
-            let {drinks} = cocktail;
-            drinks.forEach(element => {
-                let divcocktail=document.createElement("div")
-                divcocktail.className="cocktail"
-                divcocktail.innerText=element.strDrink;
-
-                let img=document.createElement("img")
-                img.className="cocktail-tmb"
-                img.src=element.strDrinkThumb
-                img.addEventListener("click", ()=>{
-                    afficherDetail(element.idDrink);
-                })
-                divcocktail.appendChild(img)
-            
-                list.appendChild(divcocktail)
-                
-            });
-            conteneur.appendChild(divTitre)
-            conteneur.appendChild(list)
-            parent.appendChild(conteneur)
+           creerListCocktail(parent, cocktail, titre);
         })
         .catch(()=>{
 
         });
 
+}
+
+creerListCocktail=(parent, cocktail, titre)=>{
+    let conteneur=document.createElement("div")
+    let divTitre=document.createElement("div")
+    let list=document.createElement("div")
+    list.className="resultat"
+    divTitre.textContent=titre
+    conteneur.className="conteneur"
+    divTitre.className="titre"
+        
+    let {drinks} = cocktail;
+    drinks.forEach(element => {
+        let divcocktail=document.createElement("div")
+        divcocktail.className="cocktail"
+        divcocktail.innerText=element.strDrink;
+
+        let img=document.createElement("img")
+        img.className="cocktail-tmb"
+        img.src=element.strDrinkThumb
+        img.addEventListener("click", ()=>{
+            afficherDetail(element.idDrink);
+        })
+        divcocktail.appendChild(img)
+    
+        list.appendChild(divcocktail)
+        
+    });
+    conteneur.appendChild(divTitre)
+    conteneur.appendChild(list)
+    parent.appendChild(conteneur)
 }
 
 recherche= (event) => { 
@@ -148,19 +152,32 @@ adding=(divrecette, cocktail, num)=>{
 listAll=()=>{
     list();
     let divresultat =document.getElementById('resultat')
-        divresultat.textContent=""
+        divresultat.textContent="";
+        let promises =[];
     for(let l=65; l<=90 ;l++){
         let letter=String.fromCharCode(l)
         console.log(l, "=>", letter)
         let url="https://www.thecocktaildb.com/api/json/v1/1/search.php?f="+letter;
-        afficheResultat(divresultat, url, letter.toUpperCase())
+        let cocktailPromise = fetch(url)
+        .then((res)=>res.json())
+        promises.push(cocktailPromise);
     }
+
+    Promise.all(promises)
+    .then((tabResultat)=>{
+        for(let l=65; l<=90 ;l++){
+            let letter=String.fromCharCode(l);
+            cocktailListLetter = tabResultat[l-65];
+            creerListCocktail(divresultat, cocktailListLetter, letter);
+        }
+    })
 
 }
 
 list=()=>{
     let divresultat =document.getElementById('resultat')
     let divLetter =document.getElementById('letter')
+    divLetter.textContent='';
     for(let p=65; p<=90; p++){
         let letter=String.fromCharCode(p)
         let buttonLetter=document.createElement('button');
@@ -172,5 +189,8 @@ list=()=>{
             afficheResultat(divresultat, url, letter.toUpperCase());
         }
         divLetter.appendChild(buttonLetter)
+
+       
+
     }
 }

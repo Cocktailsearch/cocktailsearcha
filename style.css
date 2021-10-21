@@ -200,6 +200,7 @@ button {
       background-position: left;
       background-repeat: no-repeat;
       transition: 500ms;
+      font-size: 0.7em;
   }
   
 button:before {
