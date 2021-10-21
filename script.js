@@ -52,6 +52,8 @@ if(event.keyCode && event.keyCode===13 || !event.keyCode) {
     let el=document.getElementById('recherche');
     let divresultat =document.getElementById('resultat')
     divresultat.textContent=""
+    let divLetter =document.getElementById('letter')
+    divLetter.textContent='';
     afficheResultat(divresultat, "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+el.value, "cocktail whose name includes " + el.value)
     afficheResultat(divresultat, "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="+el.value, "cocktail which includes " + el.value)
     afficheResultat(divresultat, "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c="+el.value, "cocktail in the category " + el.value) 

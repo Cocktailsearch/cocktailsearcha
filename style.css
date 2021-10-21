@@ -237,3 +237,19 @@ button:focus {
 .letter{
     font-size: 2em;
 }
+
+@media only screen and (max-width: 768px) {
+    .listall{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        border: 1px;
+        padding: 10px 25px;
+        font-size: 1em;
+        color: #444;
+        background-color: #A1A1A1;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
