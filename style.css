@@ -248,7 +248,7 @@ button:focus {
         border: 1px;
         padding: 10px 25px;
         font-size: 1em;
-        color:red;
+        color:#444;
         background-color: #A1A1A1;
         border-radius: 10px;
         cursor: pointer;
@@ -265,5 +265,13 @@ border-radius: 30px;
         
     }
 
+    .onglet>a{
+        cursor:pointer;
+        padding: 5px 10px;
+        border: 1px;
+        font-size: 1.5em;
+        color: #444;
+        background-color: #A1A1A1;
+    }
     
 }

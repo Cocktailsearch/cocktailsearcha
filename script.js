@@ -59,7 +59,7 @@ if(event.keyCode && event.keyCode===13 || !event.keyCode) {
     afficheResultat(divresultat, "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c="+el.value, "cocktail in the category " + el.value) 
     afficheResultat(divresultat, "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a="+el.value, "Filter Alcoholic " + el.value)
     document.getElementById("onglet").style.display="flex";
-    divresultat.focus()
+    document.getElementById("recherche").blur()
 }
 }
 
