@@ -11,7 +11,17 @@ afficheResultat= (parent, url, titre)=>{
            creerListCocktail(parent, cocktail, titre);
         })
         .catch(()=>{
-
+            let conteneur=document.createElement("div")
+            let divTitre=document.createElement("div")
+            divTitre.textContent=titre
+            conteneur.className="conteneur"
+            divTitre.className="titre"
+            conteneur.appendChild(divTitre)
+    let divcocktail=document.createElement("div")
+        divcocktail.className="cocktail"
+        divcocktail.innerText="not found";
+        conteneur.appendChild(divcocktail)
+        parent.appendChild(conteneur)
         });
 
 }
@@ -43,10 +53,18 @@ creerListCocktail=(parent, cocktail, titre)=>{
         list.appendChild(divcocktail)
         
     });
-}
     conteneur.appendChild(divTitre)
     conteneur.appendChild(list)
     parent.appendChild(conteneur)
+} else{
+    conteneur.appendChild(divTitre)
+    let divcocktail=document.createElement("div")
+        divcocktail.className="cocktail"
+        divcocktail.innerText="not found";
+        conteneur.appendChild(divcocktail)
+        parent.appendChild(conteneur)
+    
+}  
 }
 
 recherche= (event) => { 
